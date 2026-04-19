@@ -1,10 +1,17 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 export default defineConfig({
   title: '選擇權知識庫',
   description: '選擇權問題集與 joption 雙賣平衡程式完整指南',
   lang: 'zh-TW',
   base: '/options-kb/',
+
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
+  },
 
   themeConfig: {
     logo: '📊',

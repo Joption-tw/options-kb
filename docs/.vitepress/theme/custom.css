@@ -1,0 +1,43 @@
+/* 圖片點擊放大樣式 */
+.main img {
+  cursor: zoom-in;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  transition: box-shadow 0.2s;
+  max-width: 100%;
+}
+
+.main img:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* medium-zoom overlay */
+.medium-zoom-overlay {
+  z-index: 9999;
+}
+.medium-zoom-image--opened {
+  z-index: 10000;
+  border-radius: 4px;
+}
+
+/* 標籤頁樣式優化 */
+.vp-code-group .tabs label {
+  font-weight: 600;
+}
+
+/* 提示框圖示加大 */
+.custom-block.tip,
+.custom-block.warning,
+.custom-block.danger,
+.custom-block.info {
+  border-radius: 8px;
+}
+
+/* 表格樣式 */
+.vp-doc table {
+  width: 100%;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+}
