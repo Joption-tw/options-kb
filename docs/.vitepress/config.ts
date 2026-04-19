@@ -40,6 +40,7 @@ export default defineConfig({
           items: [
             { text: '總覽', link: '/joption/' },
             { text: '常見問題 FAQ', link: '/joption/faq' },
+            { text: '什麼是幽靈單', link: '/joption/ghost-order' },
             { text: '參數設定', link: '/joption/settings' },
             { text: '操作教學', link: '/joption/tutorial' },
             { text: '異常排除', link: '/joption/troubleshoot' },
