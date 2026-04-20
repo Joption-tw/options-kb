@@ -1,43 +1,283 @@
-/* 圖片點擊放大樣式 */
-.main img {
-  cursor: zoom-in;
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  transition: box-shadow 0.2s;
-  max-width: 100%;
+/* ===== 顏色主題 — 仿 learn.joption.com.tw ===== */
+:root {
+  --vp-c-brand-1: #1e4d35;
+  --vp-c-brand-2: #2a6347;
+  --vp-c-brand-3: #3a7d59;
+  --vp-c-brand-soft: rgba(30, 77, 53, 0.12);
+
+  --vp-button-brand-bg: #f5a623;
+  --vp-button-brand-hover-bg: #e09415;
+  --vp-button-brand-active-bg: #cc8410;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #1a1a1a;
+
+  --vp-c-bg: #f7f3ec;
+  --vp-c-bg-soft: #eee8dc;
+  --vp-c-bg-mute: #e5ddd0;
+  --vp-c-bg-alt: #f0ebe2;
+
+  --vp-nav-bg-color: #f7f3ec;
+  --vp-sidebar-bg-color: #f0ebe2;
+
+  --vp-c-text-1: #1a1a1a;
+  --vp-c-text-2: #3a3a3a;
+  --vp-c-text-3: #666;
+
+  --vp-c-divider: #d5cec4;
+  --vp-c-border: #ccc5b8;
+
+  --vp-home-hero-bg: transparent;
 }
 
-.main img:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+/* ===== 深色模式 ===== */
+.dark {
+  --vp-c-bg: #1a2e22;
+  --vp-c-bg-soft: #223320;
+  --vp-c-bg-mute: #1e2e1e;
+  --vp-c-bg-alt: #1e2e1e;
+  --vp-sidebar-bg-color: #1e2e1e;
+  --vp-nav-bg-color: #1a2e22;
 }
 
-/* medium-zoom overlay */
-.medium-zoom-overlay {
-  z-index: 9999;
-}
-.medium-zoom-image--opened {
-  z-index: 10000;
-  border-radius: 4px;
+/* ===== 導航列 ===== */
+.VPNav {
+  background: var(--vp-c-bg) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
 }
 
-/* 標籤頁樣式優化 */
-.vp-code-group .tabs label {
+.VPNavBar .title {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 800;
+}
+
+/* ===== 側邊欄 ===== */
+.VPSidebar {
+  background: var(--vp-c-bg-alt) !important;
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+}
+
+.VPSidebarItem .item .link:hover .text {
+  color: var(--vp-c-brand-2) !important;
+}
+
+/* 側邊欄群組標題 */
+.VPSidebarItem.level-0 > .item .text {
+  font-weight: 700;
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* ===== 首頁 Hero ===== */
+.VPHero {
+  background: linear-gradient(135deg, #1e4d35 0%, #2d6b4a 50%, #3a7d59 100%) !important;
+  border-radius: 20px !important;
+  margin: 24px !important;
+  padding: 60px 48px !important;
+  color: white !important;
+}
+
+.VPHero .name {
+  color: white !important;
+}
+
+.VPHero .text {
+  color: #f5a623 !important;
+  font-weight: 900;
+}
+
+.VPHero .tagline {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.VPHero .action .VPButton.brand {
+  background: #f5a623 !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-radius: 100px !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+}
+
+.VPHero .action .VPButton.brand:hover {
+  background: #e09415 !important;
+}
+
+.VPHero .action .VPButton.alt {
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+  border-radius: 100px !important;
+}
+
+/* ===== 首頁 Feature 卡片 ===== */
+.VPFeature {
+  background: white !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  padding: 24px !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 77, 53, 0.12) !important;
+}
+
+.VPFeature .title {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700 !important;
+}
+
+.VPFeature .icon {
+  font-size: 2rem;
+}
+
+/* ===== 文章頁面 ===== */
+.VPDoc .content {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 40px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+/* 標題顏色 */
+.vp-doc h1 {
+  color: var(--vp-c-brand-1);
+  font-weight: 900;
+  border-bottom: 3px solid var(--vp-c-brand-1);
+  padding-bottom: 12px;
+}
+
+.vp-doc h2 {
+  color: var(--vp-c-brand-1);
+  font-weight: 700;
+  border-bottom: 2px solid var(--vp-c-bg-mute);
+}
+
+.vp-doc h3 {
+  color: var(--vp-c-brand-2);
+  font-weight: 700;
+}
+
+/* 連結 */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
   font-weight: 600;
 }
 
-/* 提示框圖示加大 */
-.custom-block.tip,
-.custom-block.warning,
-.custom-block.danger,
-.custom-block.info {
-  border-radius: 8px;
+/* ===== 提示框 ===== */
+.custom-block.tip {
+  background: rgba(30, 77, 53, 0.08);
+  border-color: var(--vp-c-brand-1);
+  border-radius: 12px;
 }
 
-/* 表格樣式 */
+.custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand-1);
+}
+
+.custom-block.warning {
+  background: rgba(245, 166, 35, 0.1);
+  border-color: #f5a623;
+  border-radius: 12px;
+}
+
+.custom-block.danger {
+  border-radius: 12px;
+}
+
+.custom-block.info {
+  border-radius: 12px;
+}
+
+/* ===== 表格 ===== */
 .vp-doc table {
   width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
 }
 
 .vp-doc th {
+  background: var(--vp-c-brand-1) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+.vp-doc tr:nth-child(even) td {
   background: var(--vp-c-bg-soft);
+}
+
+.vp-doc td {
+  padding: 10px 16px;
+}
+
+/* ===== 標籤頁 (Tabs) ===== */
+.vp-code-group .tabs {
+  background: var(--vp-c-bg-soft) !important;
+  border-radius: 12px 12px 0 0;
+}
+
+.vp-code-group .tabs label {
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+}
+
+.vp-code-group .tabs input:checked + label {
+  color: var(--vp-c-brand-1) !important;
+  border-bottom-color: var(--vp-c-brand-1) !important;
+}
+
+/* ===== 圖片 ===== */
+.vp-doc img {
+  cursor: zoom-in;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  transition: box-shadow 0.2s, transform 0.2s;
+  max-width: 100%;
+  margin: 16px 0;
+}
+
+.vp-doc img:hover {
+  box-shadow: 0 6px 20px rgba(30, 77, 53, 0.15);
+  transform: translateY(-2px);
+}
+
+.medium-zoom-overlay {
+  z-index: 9999;
+  background: rgba(0,0,0,0.85) !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 10000;
+  border-radius: 8px;
+}
+
+/* ===== 程式碼區塊 ===== */
+.vp-doc div[class*='language-'] {
+  border-radius: 12px;
+}
+
+/* ===== 編輯連結 ===== */
+.VPDocFooter .edit-link-button {
+  color: var(--vp-c-brand-1);
+}
+
+/* ===== 捲軸 ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-3);
+  border-radius: 3px;
 }
